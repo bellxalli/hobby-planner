@@ -1,13 +1,15 @@
 import express from 'express';
 
-const app = express;
+const app = express();
 const PORT = 3000;
 
-app.request(express.urlencoded({ extended: true}));
-app.request(express.static('public'));
+app.use(express.urlencoded({ extended: true}));
+app.use(express.static('public'));
+
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-     res.render('home');
+     res.render('sign-in');
 });
 
 app.listen(PORT, () => {

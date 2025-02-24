@@ -20,6 +20,11 @@ app.get('/', (req, res) => {
     res.render('sign-in');
 });
 
+// Setting up a route to "list-view" from "sign-in"
+app.get('/list-view', (req, res) => {
+     res.render('list-view');
+});
+
 app.listen(PORT, () => {
      console.log(`Server is running at http://localhost:${PORT}`);
  });

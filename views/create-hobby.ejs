@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Hobby</title>
-</head>
-<body>
-    <h1>Add New Hobby</h1>
-    
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add New Hobby</title>
+    </head>
+    <body>
+        <h1>Add New Hobby</h1>
+        <form action="list-view.ejs" method="post">
+            <fieldset>
+                <legend>Title</legend>
+                <label>
+                    <input type="text" name="title">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Description</legend>
+                <label>
+                    <textarea name="description"></textarea>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Tag Name:</legend>
+                <select>
+                    <option value="none" name="tag1"></option>
+                </select>
+
+                <legend>New Tag Name:</legend>
+                <label>
+                    <input type="text" name="newTagName">
+                </label>
+
+                <legend>Tag Color:</legend>
+                <label>
+                    <input type="radio" name="tagColor">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Aloted Time</legend>
+                <label>
+                    <input type="time" name="timer">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Due Date:</legend>
+                <label>
+                    <input type="datetime" name="dueDate">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <button>Random Selection</button>
+            </fieldset>
+
+            <button type="submit">Save and Create</button>    
+        </form>
+        
+    </body>
 </html>

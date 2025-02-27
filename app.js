@@ -20,6 +20,11 @@ app.get('/', (req, res) => {
     res.render('sign-in');
 });
 
+// Define a route for creating an account
+app.get('/create-account', (req, res) => {
+     res.render('create-account');
+})
+
 // CHANGE BACK TO "app.post" once connected from "create-account"
 app.get('/account-created', (req, res) => {
      // Testing verification

@@ -12,6 +12,14 @@
         </ul>
 
         <button onclick = "history.back()">Back</button>
+
+
+        <button class="sign-out">Sign Out</button>
+        <script type="text/javascript">
+            document.getElementsByClassName("sign-out").onclick = function () {
+                location.href = "http://localhost:3000/";
+            };
+        </script>
         
     </body>
 </html>

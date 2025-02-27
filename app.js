@@ -1,18 +1,18 @@
 //Import Express
 import express from 'express';
-import mariadb from 'mariadb';
-import dotenv from 'dotenv';
+// import mariadb from 'mariadb';
+// import dotenv from 'dotenv';
 
-dotenv.config();
+// dotenv.config();
 
-//Define our database credentials
-const pool = mariadb.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.PORT
-});
+// //Define our database credentials
+// const pool = mariadb.createPool({
+//     host: process.env.DB_HOST,
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASSWORD,
+//     database: process.env.DB_NAME,
+//     port: process.env.PORT
+// });
 
 
 const app = express();
@@ -40,7 +40,7 @@ app.get('/create-account', (req, res) => {
 })
 
 // CHANGE BACK TO "app.post" once connected from "create-account"
-app.get('/account-created', (req, res) => {
+app.post('/account-created', (req, res) => {
      // Testing verification
      console.log(req.body);
 

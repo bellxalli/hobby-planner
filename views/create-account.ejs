@@ -8,13 +8,13 @@
     <body>
         <h1>Welcome!</h1>
         
-        <form action="list-view.ejs">
+        <form action="account-created" method="post">
             <legend>Create New Account!</legend>
             <label>Username: </label>
-            <input type="text">
+            <input type="text" name="username">
 
             <label>Password: </label>
-            <input type="text">
+            <input type="text" name="password">
             <button type="submit">Create Account and Sign In</button>
         </form>
     </body>

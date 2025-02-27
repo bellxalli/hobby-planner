@@ -62,6 +62,10 @@ app.get('/list-view', (req, res) => {
      res.render('list-view');
 });
 
+app.get('create-hobby', (req, res) => {
+     res.render('create-hobby');
+});
+
 app.listen(PORT, () => {
      console.log(`Server is running at http://localhost:${PORT}`);
  });

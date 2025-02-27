@@ -59,6 +59,16 @@
 
             <button type="submit">Save and Create</button>    
         </form>
+
+        <button onclick = "history.back()">Back to List View</button>
+
+        <button class="sign-out">Sign Out</button>
+
+        <script type="text/javascript">
+            document.getElementsByClassName("sign-out").onclick = function () {
+                location.href = "/views/sign-in.ejs";
+            };
+        </script>
         
     </body>
 </html>

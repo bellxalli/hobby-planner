@@ -1,7 +1,7 @@
 //Import Express
 import express from 'express';
 // import mariadb from 'mariadb';
-import dotenv from 'dotenv';
+//import dotenv from 'dotenv';
 
 // dotenv.config();
 

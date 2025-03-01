@@ -28,6 +28,9 @@ div
 button
 {
     margin-top: 10px;
+    background-color: darkslateblue;
+    color: rgb(255, 250, 230);
+    border-style:solid;
+    border-color: darkslateblue;
+    border-radius: 3px;
 }
-
-

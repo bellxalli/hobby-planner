@@ -33,7 +33,7 @@ const plans = [];
 app.get('/', (req, res) => {
 
     // Send our home page as a response to the client
-    res.render('sign-in');
+    res.render('home');
 });
 
 // Define a route for creating an account

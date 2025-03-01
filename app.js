@@ -1,7 +1,7 @@
 //Import Express
 import express from 'express';
 // import mariadb from 'mariadb';
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
 // dotenv.config();
 
@@ -26,6 +26,8 @@ app.use(express.static('public'));
 const PORT = 3000;
 
 const users = [];
+const plans = [];
+
 
 //Define a "default" route for our home page
 app.get('/', (req, res) => {
@@ -59,7 +61,22 @@ app.post('/account-created', (req, res) => {
 
 // Setting up a route to "list-view" from "sign-in"
 app.get('/list-view', (req, res) => {
-     res.render('list-view');
+     res.render('list-view', {plans});
+});
+
+app.get('/create-hobby', (req, res) => {
+     const plan = {
+          title: req.body.title,
+          description: req.body.title,
+          tagColor: req.body.tagColor,
+          alotedTime: req.body.timer,
+          dueDate: req.body.dueDate
+     };
+
+     console.log(plan);
+     plans.push(plan);
+
+     res.render('create-hobby');
 });
 
 app.listen(PORT, () => {

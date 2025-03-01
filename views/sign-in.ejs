@@ -4,23 +4,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sign-In</title>
+        <link rel="stylesheet" href="styles/account_styles.css">
     </head>
     <body>
+
         <h1>Welcome!</h1>
+        <div>
+            <form action="list-view" method="get"> 
+                <legend>Sign In!</legend>
+                <label>Username: </label>
+                <input type="text">
 
-    <form action="list-view" method="get"> 
-        <legend>Sign In!</legend>
-        <label>Username: </label>
-        <input type="text">
+                <label>Password: </label>
+                <input type="text">
+                <button type="submit" id="sign-in">Sign In</button>
+            </form>
 
-        <label>Password: </label>
-        <input type="text">
-        <button type="submit">Sign In</button>
-     </form>
+            <form action="create-account" method="get">
+                <button type="submit" id="create">Create Account</button>
+            </form>
+        </div>
 
-     <form action="create-account" method="get">
-          <button type="submit">Create Account</button>
-     </form>
 
     </body>
 </html>

@@ -3,14 +3,18 @@
      <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Document</title>
+          <title>Create Account</title>
+          <link rel="stylesheet" href="styles/account_styles.css">
+
      </head>
      <body>
           <h1>Thank you <%= user.username %> for signing up!</h1>
-
-          <form action="list-view" method="get">
-               <button type="submit">Continue to Hobby Planner!</button>
-          </form>
+          <div>
+               <form action="list-view" method="get">
+                    <button type="submit" id="continue">Continue to Hobby Planner!</button>
+               </form>
+          </div>
+          
 
      </body>
 </html>

@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Create Hobby Form</title>
+        <link rel="stylesheet" href="styles/create_hobby_popup.css">
     </head>
     <body>
         <button class="btn-open-popup" onclick="togglePopup()">Create Hobby</button>
@@ -16,7 +17,7 @@
         <h1>Add New Hobby</h1>
 
         <form action="list-view" method="get" class="form-container">
-            <!-- <fieldset class="form-fieldset">
+            <fieldset class="form-fieldset">
                 <legend>Title</legend>
                 <label>
                     <input type="text" name="title" class="form-input">
@@ -63,13 +64,14 @@
 
             <fieldset class="form-fieldset">
                 <button>Random Selection</button>
-            </fieldset> -->
+            </fieldset>
 
             <button class="btn-submit" type="submit">Submit Hobby</button>    
         </form>
 
         
-        <button class="btn-close-popup" onclick="togglePopup()">Close</button>
+        <!-- <button class="btn-close-popup" onclick="togglePopup()">Cancel</button> -->
+        <button class="btn-submit" type="submit">Close</button>
 
         <script>
             function togglePopup() {
@@ -77,16 +79,6 @@
                 overlay.classList.toggle('show');
             }
         </script>
-
-        <!-- <button onclick = "history.back()">Back to List View</button>
-
-        <button class="sign-out">Sign Out</button>
-
-        <script type="text/javascript">
-            document.getElementsByClassName("sign-out").onclick = function () {
-                location.href = "http://localhost:3000/";
-            };
-        </script> -->
         
     </body>
 </html>

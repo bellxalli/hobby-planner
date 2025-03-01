@@ -59,7 +59,7 @@ app.post('/account-created', (req, res) => {
      res.render('account-created', { user });
 });
 
-// Setting up a route to "list-view" from "sign-in"
+// Setting up a route to "list-view" from the home page
 app.get('/list-view', (req, res) => {
      res.render('list-view', {plans});
 });
@@ -77,6 +77,11 @@ app.get('/create-hobby', (req, res) => {
      plans.push(plan);
 
      res.render('create-hobby');
+});
+
+// Setting up a route to the profile page
+app.get('/profile', (req, res) => {
+     res.render('profile');
 });
 
 app.listen(PORT, () => {

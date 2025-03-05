@@ -12,12 +12,16 @@
 
                <button onclick = "history.back()">Back</button>
 
-               <button class="sign-out">Sign Out</button>
+               <!-- <button class="sign-out">Sign Out</button>
                <script type="text/javascript">
                     document.getElementsByClassName("sign-out").onclick = function () {
                          location.href = "http://localhost:3000/";
                     };
-               </script>
+               </script> -->
+
+               <form action="/" method="get">
+                    <button type="submit">Sign Out</button>
+               </form>
 
                <form action="create-hobby" method="get">
                     <button type="submit">Add Hobby!</button>

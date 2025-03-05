@@ -7,13 +7,7 @@
         <link rel="stylesheet" href="styles/create_hobby_popup.css">
     </head>
     <body>
-        <button class="btn-open-popup" onclick="togglePopup()">Create Hobby</button>
-        <div id="popupOverlay" class="overlay-container">
-            <div class="popup-box">
 
-            </div>
-        </div>
-        
         <h1>Add New Hobby</h1>
 
         <form action="list-view" method="get" class="form-container">
@@ -32,6 +26,7 @@
             </fieldset>
 
             <fieldset class="form-fieldset">
+                <legend>Tags</legend>
                 <legend>Tag Name:</legend>
                 <select class="form-input">
                     <option value="none" name="tag1"></option>
@@ -50,35 +45,29 @@
 
             <fieldset class="form-fieldset">
                 <legend>Aloted Time</legend>
+                <legend>Start By:</legend>
+                <label>
+                    <input type="time" name="timer" class="form-input"> 
+                </label>
+                <legend>End By:</legend>
                 <label>
                     <input type="time" name="timer" class="form-input"> 
                 </label>
             </fieldset>
 
             <fieldset class="form-fieldset">
-                <legend>Due Date:</legend>
+                <legend>Due Date</legend>
                 <label>
-                    <input type="datetime" name="dueDate" class="form-input">
+                    <input type="date" name="dueDate" class="form-input">
                 </label>
             </fieldset>
 
-            <fieldset class="form-fieldset">
+            <!-- <fieldset class="form-fieldset">
                 <button>Random Selection</button>
-            </fieldset>
+            </fieldset> -->
 
             <button class="btn-submit" type="submit">Submit Hobby</button>    
         </form>
-
-        
-        <!-- <button class="btn-close-popup" onclick="togglePopup()">Cancel</button> -->
-        <button class="btn-submit" type="submit">Close</button>
-
-        <script>
-            function togglePopup() {
-                const overlay = document.getElementById('popupOverlay');
-                overlay.classList.toggle('show');
-            }
-        </script>
         
     </body>
 </html>

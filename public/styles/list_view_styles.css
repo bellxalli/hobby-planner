@@ -1,0 +1,43 @@
+body
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    background-color: rgb(255, 250, 230);
+}
+
+h1
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: darkgreen;
+}
+
+button
+{
+    display: flex;
+    margin-top: 10px;
+    margin-left: auto;
+    background-color: darkslateblue;
+    color: rgb(255, 250, 230);
+    border-style:solid;
+    border-color: darkslateblue;
+    border-radius: 3px;
+}
+
+hr
+{
+    visibility: hidden;
+}
+
+ul li
+{
+    background-color: rgb(255, 245, 200);
+    color: darkgreen;
+}
+
+
+

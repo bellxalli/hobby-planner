@@ -64,20 +64,25 @@ app.get('/list-view', (req, res) => {
      res.render('list-view', {plans});
 });
 
+// Defining a route to add a new hobby to the list
 app.get('/create-hobby', (req, res) => {
+     res.render('create-hobby');
+});
+// Defining a route to confirm the posted hobby
+app.post('/hobby-added', (req, res) => {
      const plan = {
           title: req.body.title,
           description: req.body.description,
           tagName: req.body.tagName,
           tagColor: req.body.tagColor,
-          availStartDateTime: req.body.dueDate + req.body.startTimer,
-          availEndDateTime: req.body.dueDate + req.body.endTimer
+          availStartDateTime: req.body.dueDate + " " + req.body.startTimer,
+          availEndDateTime: req.body.dueDate + " " + req.body.endTimer
      };
 
      console.log(plan);
      plans.push(plan);
 
-     res.render('create-hobby');
+     res.render('hobby-added', {plans});
 });
 
 // Setting up a route to the profile page

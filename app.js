@@ -68,9 +68,9 @@ app.get('/create-hobby', (req, res) => {
      const plan = {
           title: req.body.title,
           description: req.body.title,
+          tagName: req.body.tagName,
           tagColor: req.body.tagColor,
-          alotedTime: req.body.timer,
-          dueDate: req.body.dueDate
+          availDateTime: req.body.dueDate + req.body.timer
      };
 
      console.log(plan);

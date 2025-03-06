@@ -67,10 +67,11 @@ app.get('/list-view', (req, res) => {
 app.get('/create-hobby', (req, res) => {
      const plan = {
           title: req.body.title,
-          description: req.body.title,
+          description: req.body.description,
           tagName: req.body.tagName,
           tagColor: req.body.tagColor,
-          availDateTime: req.body.dueDate + req.body.timer
+          availStartDateTime: req.body.dueDate + req.body.startTimer,
+          availEndDateTime: req.body.dueDate + req.body.endTimer
      };
 
      console.log(plan);

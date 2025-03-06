@@ -53,3 +53,9 @@ button
     width: 100px;
     font-size: 16px;
 }
+
+#cancel
+{
+    background-color: darkred;
+    border-color: darkred;
+}

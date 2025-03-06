@@ -26,25 +26,21 @@
             </fieldset>
 
             <fieldset class="form-fieldset">
-                <legend>Tags</legend>
-                <legend>Tag Name:</legend>
-                <select class="form-input">
-                    <option value="none" name="tag1"></option>
-                </select>
+                <legend>Tags</legend>               
 
-                <legend>New Tag Name:</legend>
+                <legend>Tag Name:</legend>
                 <label>
                     <input type="text" name="newTagName" class="form-input">
                 </label>
 
                 <legend>Tag Color:</legend>
                 <label>
-                    <input type="radio" name="tagColor" class="form-input">
+                    <input type="color" name="tagColor" class="form-input" value="#000000">
                 </label>
             </fieldset>
 
             <fieldset class="form-fieldset">
-                <legend>Aloted Time</legend>
+                <legend>Time Needed</legend>
                 <legend>Start By:</legend>
                 <label>
                     <input type="time" name="timer" class="form-input"> 
@@ -56,7 +52,7 @@
             </fieldset>
 
             <fieldset class="form-fieldset">
-                <legend>Due Date</legend>
+                <legend>Available Date</legend>
                 <label>
                     <input type="date" name="dueDate" class="form-input">
                 </label>
@@ -68,6 +64,8 @@
 
             <button class="btn-submit" type="submit">Submit Hobby</button>    
         </form>
+
+        <button onclick = "history.back()" id="cancel">Cancel</button>
         
     </body>
 </html>

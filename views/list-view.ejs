@@ -32,7 +32,7 @@
 
                     <% for (let i = 0; i < plans.length; i++) { %>
                          <li><b><%= plans[i].title %></b></li>
-                         <li><b><%= plans[i].tagColor %></b></li>
+                         <li id="tagColor"><b><%= plans[i].tagColor %></b></li>
                          <li><%= plans[i].description %></li>
                          <button id="remove">Remove</button>
                          <button id="complete">Complete!</button>

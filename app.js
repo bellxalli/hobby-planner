@@ -1,19 +1,28 @@
-//Import Express
 import express from 'express';
-// import mariadb from 'mariadb';
-//import dotenv from 'dotenv';
+import mariadb from 'mariadb';
+import dotenv from 'dotenv';
 
-// dotenv.config();
+dotenv.config();
 
-// //Define our database credentials
-// const pool = mariadb.createPool({
-//     host: process.env.DB_HOST,
-//     user: process.env.DB_USER,
-//     password: process.env.DB_PASSWORD,
-//     database: process.env.DB_NAME,
-//     port: process.env.PORT
-// });
+//Define our database credentials
+const pool = mariadb.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.PORT
+});
 
+async function connect() {
+     try {
+          const conn = await pool.getConnection();
+     console.log('Connected to the database');
+     return conn;
+     } catch (err) {
+          console.log(`Error connecting to the database ${err}`);
+     }
+
+}
 
 const app = express();
 
@@ -23,7 +32,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
-const PORT = 3000;
+const PORT = process.env.APP_PORT || 3000;
 
 const users = [];
 const plans = [];
@@ -42,19 +51,21 @@ app.get('/create-account', (req, res) => {
 })
 
 // CHANGE BACK TO "app.post" once connected from "create-account"
-app.post('/account-created', (req, res) => {
-     // Testing verification
-     console.log(req.body);
+app.post('/account-created', async (req, res) => {
 
      const user = {
           username: req.body.username,
           password: req.body.password
      }
 
-     // Add the user to the users database
-     users.push(user);
-     console.log(users);
+     // NOT WORKING, NEED TO FIX:
+     // const conn = await connect();
 
+     // const insertQuery = await conn.query(
+     //      `INSERT INTO userProfile (userName, userPassword) VALUES (?, ?);`, 
+     //      [user.username, user.password]);
+
+     users.push(user)
      // Send "account-created" page
      res.render('account-created', { user });
 });

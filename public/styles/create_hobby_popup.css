@@ -7,6 +7,11 @@ body
     background-color: rgb(255, 250, 230);
 }
 
+.err
+{
+    display: none;
+}
+
 h1
 {
     display: flex;

@@ -1,6 +1,8 @@
 import express from 'express';
 import mariadb from 'mariadb';
 import dotenv from 'dotenv';
+import validateAddHobby from './services/validation.js';
+import validateSignIn from './services/sign-in-validation.js';
 
 dotenv.config();
 
@@ -59,13 +61,12 @@ app.post('/account-created', async (req, res) => {
      }
 
      //validation
-
-     if(user.username.trim() === "")
+     const result = validateSignIn(user);
+     if (!result.isValid) 
      {
-          return;
-     }
-     if(user.password.trim() === "")
-     {
+          console.log(result.errors);
+          // res.render('home', { errors: errors }
+          res.send(result.errors);
           return;
      }
 
@@ -89,7 +90,7 @@ app.get('/create-hobby', (req, res) => {
      res.render('create-hobby');
 });
 // Defining a route to confirm the posted hobby
-app.post('/hobby-added', (req, res) => {
+app.post('/hobby-added', async (req, res) => {
      const plan = {
           title: req.body.title,
           description: req.body.description,
@@ -100,30 +101,14 @@ app.post('/hobby-added', (req, res) => {
      };
 
      //validation
-     if(plan.title.trim() === "")
+     const result = validateAddHobby(plan);
+     if (!result.isValid) 
      {
+          console.log(result.errors);
+          // res.render('home', { errors: errors }
+          res.send(result.errors);
           return;
-     }
-     if(plan.description.trim() === "")
-     {
-          return;
-     }
-     if(plan.tagName.trim() === "")
-     {
-          return;
-     }
-     if(plan.tagColor.trim() === "")
-     {
-          return;
-     }
-     if(plan.availStartDateTime === "") //fix so it is actual value
-     {
-          return;
-     }
-     if(plan.availEndDateTime === "") // fix so it is actual value
-     {
-          return;
-     }
+     }     
 
      console.log(plan);
      plans.push(plan);

@@ -15,6 +15,7 @@
                 <legend>Title</legend>
                 <label>
                     <input type="text" name="title" class="form-input">
+                    <span id="err-title" class="err">Enter title</span>
                 </label>
             </fieldset>
 
@@ -22,6 +23,7 @@
                 <legend>Description</legend>
                 <label>
                     <textarea name="description" class="form-input"></textarea>
+                    <span id="err-description" class="err">Enter description</span>
                 </label>
             </fieldset>
 
@@ -48,11 +50,13 @@
                         <option>🛍️</option>
                         <option>✈️</option>
                     </select>
+                    <span id="err-tagIcon" class="err">Select An Icon</span>
                 </label>
 
                 <legend>Tag Color:</legend>
                 <label>
                     <input type="color" name="tagColor" class="form-input" value="#000000">
+                    <span id="err-color" class="err">Pick a Color</span>
                 </label>
             </fieldset>
 
@@ -61,10 +65,12 @@
                 <legend>Start By:</legend>
                 <label>
                     <input type="time" name="startTimer" class="form-input"> 
+                    <span id="err-sTime" class="err">Select a Start Time</span>
                 </label>
                 <legend>End By:</legend>
                 <label>
                     <input type="time" name="endTimer" class="form-input"> 
+                    <span id="err-eTime" class="err">Select a End Time</span>
                 </label>
             </fieldset>
 
@@ -72,6 +78,7 @@
                 <legend>Available Date</legend>
                 <label>
                     <input type="date" name="dueDate" class="form-input">
+                    <span id="err-date" class="err">Select a Date</span>
                 </label>
             </fieldset>
 

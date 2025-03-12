@@ -58,6 +58,17 @@ app.post('/account-created', async (req, res) => {
           password: req.body.password
      }
 
+     //validation
+
+     if(user.username.trim() === "")
+     {
+          return;
+     }
+     if(user.password.trim() === "")
+     {
+          return;
+     }
+
      // NOT WORKING, NEED TO FIX:
      // const conn = await connect();
 
@@ -91,6 +102,30 @@ app.post('/hobby-added', (req, res) => {
      };
 
      //validation
+     if(plan.title.trim() === "")
+     {
+          return;
+     }
+     if(plan.description.trim() === "")
+     {
+          return;
+     }
+     if(plan.tagName.trim() === "")
+     {
+          return;
+     }
+     if(plan.tagColor.trim() === "")
+     {
+          return;
+     }
+     if(plan.availStartDateTime === "") //fix so it is actual value
+     {
+          return;
+     }
+     if(plan.availEndDateTime === "") // fix so it is actual value
+     {
+          return;
+     }
 
      console.log(plan);
      plans.push(plan);

@@ -2,6 +2,7 @@ import express from 'express';
 import mariadb from 'mariadb';
 import dotenv from 'dotenv';
 import validateAddHobby from './services/validation.js';
+import validateSignIn from './services/sign-in-validation.js';
 
 dotenv.config();
 
@@ -60,13 +61,12 @@ app.post('/account-created', async (req, res) => {
      }
 
      //validation
+     const result = validateSignIn(user);
 
-     if(user.username.trim() === "")
+     if (!result.isValid) 
      {
-          return;
-     }
-     if(user.password.trim() === "")
-     {
+          console.log(result.errors);
+          res.send(result.errors);
           return;
      }
 
@@ -92,7 +92,7 @@ app.get('/create-hobby', (req, res) => {
      res.render('create-hobby');
 });
 // Defining a route to confirm the posted hobby
-app.post('/hobby-added', (req, res) => {
+app.post('/hobby-added', async (req, res) => {
      const plan = {
           title: req.body.title,
           description: req.body.description,
@@ -103,7 +103,13 @@ app.post('/hobby-added', (req, res) => {
      };
 
      //validation
-     validateAddHobby(plan);
+     const result = validateAddHobby(plan);
+     if (!result.isValid) 
+     {
+          console.log(result.errors);
+          res.send(result.errors);
+          return;
+     }     
 
      console.log(plan);
      plans.push(plan);

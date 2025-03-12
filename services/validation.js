@@ -1,6 +1,6 @@
 //put validation in here then call function
 
-export default function validateAddHobby(data)
+export default function validateAddHobby(plan)
 {
     const errors = [ ];
 
@@ -13,18 +13,18 @@ export default function validateAddHobby(data)
     {
         errors.push("Must Include a Description");
     }
-    if(plan.tagName.trim() === "")
-    {
-        errors.push("Select a Tag Icon");
-    }
-    if(plan.tagColor.trim() === "")
-    {
-        errors.push("Pick a Tag Color");
-    }
-    if(plan.availStartDateTime === "" || plan.availEndDateTime === "") //fix so it is actual value
-    {
-        errors.push("Pick a Start Time, End Time, and Date");
-    }
+    // if(plan.tagName.trim() === "")
+    // {
+    //     errors.push("Select a Tag Icon");
+    // }
+    // if(plan.tagColor.trim() === "")
+    // {
+    //     errors.push("Pick a Tag Color");
+    // }
+    // if(plan.availStartDateTime === "" || plan.availEndDateTime === "") //fix so it is actual value
+    // {
+    //     errors.push("Pick a Start Time, End Time, and Date");
+    // }
     return {
         isValid: errors.length === 0,
         errors

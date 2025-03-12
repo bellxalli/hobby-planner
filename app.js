@@ -90,6 +90,8 @@ app.post('/hobby-added', (req, res) => {
           availEndDateTime: req.body.dueDate + " " + req.body.endTimer
      };
 
+     //validation
+
      console.log(plan);
      plans.push(plan);
 

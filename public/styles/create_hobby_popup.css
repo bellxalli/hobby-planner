@@ -53,9 +53,19 @@ button
     width: 100px;
     font-size: 16px;
 }
+button:hover
+{
+    background-color: lightgreen;
+    color: black;
+}
 
 #cancel
 {
     background-color: darkred;
     border-color: darkred;
+}
+#cancel:hover
+{
+    background-color: red;
+    color: black;
 }

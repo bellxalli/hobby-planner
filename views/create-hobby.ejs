@@ -28,9 +28,26 @@
             <fieldset class="form-fieldset">
                 <legend>Tags</legend>               
 
-                <legend>Tag Name:</legend>
+                <legend>Tag Icon:</legend>
                 <label>
-                    <input type="text" name="tagName" class="form-input">
+                    <select name="tagName" class="form-input">
+                        <option>🧶</option>
+                        <option>🎭</option>
+                        <option>🎨</option>
+                        <option>🧵</option>
+                        <option>💃</option>
+                        <option>🏕️</option>
+                        <option>🏔️</option>
+                        <option>🌊</option>
+                        <option>🪐</option>
+                        <option>🎁</option>
+                        <option>🏋️</option>
+                        <option>👩🏻‍🍳</option>
+                        <option>🧘</option>
+                        <option>🧗‍♀️</option>
+                        <option>🛍️</option>
+                        <option>✈️</option>
+                    </select>
                 </label>
 
                 <legend>Tag Color:</legend>
@@ -65,7 +82,9 @@
             <button class="btn-submit" type="submit">Submit Hobby</button>    
         </form>
 
-        <button type="submit" id="cancel">Cancel</button>
+        <!-- <button type="submit" id="cancel" onclick="history.go(-1)">Cancel</button> -->
+        <a href="http://localhost:3000/list-view?"> Cancel </a>
+        <!-- <input type="button" value="Cancel" onclick="window.location='http://localhost:3000/list-view?'"/> -->
         
     </body>
 </html>

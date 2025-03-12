@@ -28,6 +28,17 @@ button
     border-color: darkslateblue;
     border-radius: 3px;
 }
+button:hover
+{
+    background-color: lavender;
+    color: darkslateblue;
+}
+
+.done
+{
+    display: inline;
+    margin-bottom: 10px;
+}
 
 hr
 {

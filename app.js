@@ -62,10 +62,10 @@ app.post('/account-created', async (req, res) => {
 
      //validation
      const result = validateSignIn(user);
-
      if (!result.isValid) 
      {
           console.log(result.errors);
+          // res.render('home', { errors: errors }
           res.send(result.errors);
           return;
      }
@@ -107,6 +107,7 @@ app.post('/hobby-added', async (req, res) => {
      if (!result.isValid) 
      {
           console.log(result.errors);
+          // res.render('home', { errors: errors }
           res.send(result.errors);
           return;
      }     

@@ -1,6 +1,7 @@
 import express from 'express';
 import mariadb from 'mariadb';
 import dotenv from 'dotenv';
+import validateAddHobby from './services/validation.js';
 
 dotenv.config();
 
@@ -102,30 +103,7 @@ app.post('/hobby-added', (req, res) => {
      };
 
      //validation
-     if(plan.title.trim() === "")
-     {
-          return;
-     }
-     if(plan.description.trim() === "")
-     {
-          return;
-     }
-     if(plan.tagName.trim() === "")
-     {
-          return;
-     }
-     if(plan.tagColor.trim() === "")
-     {
-          return;
-     }
-     if(plan.availStartDateTime === "") //fix so it is actual value
-     {
-          return;
-     }
-     if(plan.availEndDateTime === "") // fix so it is actual value
-     {
-          return;
-     }
+     validateAddHobby(plan);
 
      console.log(plan);
      plans.push(plan);

@@ -9,15 +9,15 @@ const pool = mariadb.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    database: process.env.DB_DATABASE,
     port: process.env.PORT
 });
 
 async function connect() {
      try {
           const conn = await pool.getConnection();
-     console.log('Connected to the database');
-     return conn;
+          console.log('Connected to the database');
+          return conn;
      } catch (err) {
           console.log(`Error connecting to the database ${err}`);
      }
@@ -70,11 +70,9 @@ app.post('/account-created', async (req, res) => {
      }
 
      // NOT WORKING, NEED TO FIX:
-     // const conn = await connect();
+     const conn = await connect();
 
-     // const insertQuery = await conn.query(
-     //      `INSERT INTO userProfile (userName, userPassword) VALUES (?, ?);`, 
-     //      [user.username, user.password]);
+     const insertQuery = await conn.query(`INSERT INTO userProfile (userName, userPassword) VALUES (?, ?);`, [user.username, user.password]);
 
      users.push(user)
      // Send "account-created" page

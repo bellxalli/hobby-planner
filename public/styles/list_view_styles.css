@@ -1,55 +1,227 @@
+@media only screen and (max-width: 420px) 
+{
+    body
+    {
+        display: inline;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb(255, 250, 230);
+    }
 
-body
+    h1
+    {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        color: darkgreen;
+    }
+
+    #buttons
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button
+    {
+        display: flex;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: 10px;
+        background-color: darkslateblue;
+        color: rgb(255, 250, 230);
+        border-style:solid;
+        border-color: darkslateblue;
+        border-radius: 3px;
+    }
+    button:hover
+    {
+        background-color: lavender;
+        color: darkslateblue;
+    }
+
+    .done
+    {
+        display: inline;
+        margin-bottom: 10px;
+    }
+
+    #add
+    {
+        background-color: palevioletred;
+        border-color: palevioletred;
+        color: rgb(255, 250, 230);
+    }
+    #add:hover
+    {
+        background-color: pink;
+        border-color: palevioletred;
+        color: palevioletred;
+    }
+
+    hr
+    {
+        visibility: hidden;
+    }
+
+    ul li
+    {
+        background-color: rgb(255, 245, 200);
+        color: darkgreen;
+    }
+}
+@media only screen and (max-width: 950px) 
 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
-    background-color: rgb(255, 250, 230);
+    body
+    {
+        display: inline;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb(255, 250, 230);
+    }
+
+    h1
+    {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        color: darkgreen;
+    }
+
+    #buttons
+    {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    button
+    {
+        display: flex;
+        margin-top: 10px;
+        margin-left: auto;
+        background-color: darkslateblue;
+        color: rgb(255, 250, 230);
+        border-style:solid;
+        border-color: darkslateblue;
+        border-radius: 3px;
+    }
+    button:hover
+    {
+        background-color: lavender;
+        color: darkslateblue;
+    }
+
+    #add
+    {
+        background-color: palevioletred;
+        border-color: palevioletred;
+        color: rgb(255, 250, 230);
+    }
+    #add:hover
+    {
+        background-color: pink;
+        border-color: palevioletred;
+        color: palevioletred;
+    }
+
+    .done
+    {
+        display: inline;
+        margin-bottom: 10px;
+    }
+
+    #list
+    {
+        border-style: solid;
+        border-radius: 5px;
+        border-color: lemonchiffon;
+    }
+
+    hr
+    {
+        display: none;
+    }
+
+    ul li
+    {
+        background-color: rgb(255, 245, 200);
+        color: darkgreen;
+    }    
+}
+@media only screen and (min-width: 950px) 
+{
+    body
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        background-color: rgb(255, 250, 230);
+    }
+
+    h1
+    {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        color: darkgreen;
+    }
+
+    button
+    {
+        display: flex;
+        margin-top: 10px;
+        margin-left: auto;
+        background-color: darkslateblue;
+        color: rgb(255, 250, 230);
+        border-style:solid;
+        border-color: darkslateblue;
+        border-radius: 3px;
+    }
+    button:hover
+    {
+        background-color: lavender;
+        color: darkslateblue;
+    }
+
+    #add
+    {
+        background-color: palevioletred;
+        border-color: palevioletred;
+        color: rgb(255, 250, 230);
+    }
+    #add:hover
+    {
+        background-color: pink;
+        border-color: palevioletred;
+        color: palevioletred;
+    }
+
+    .done
+    {
+        display: inline;
+        margin-bottom: 10px;
+    }
+
+    hr
+    {
+        visibility: hidden;
+    }
+
+    ul li
+    {
+        background-color: rgb(255, 245, 200);
+        color: darkgreen;
+    }
 }
 
-h1
-{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    color: darkgreen;
-}
 
-button
-{
-    display: flex;
-    margin-top: 10px;
-    margin-left: auto;
-    background-color: darkslateblue;
-    color: rgb(255, 250, 230);
-    border-style:solid;
-    border-color: darkslateblue;
-    border-radius: 3px;
-}
-button:hover
-{
-    background-color: lavender;
-    color: darkslateblue;
-}
 
-.done
-{
-    display: inline;
-    margin-bottom: 10px;
-}
-
-hr
-{
-    visibility: hidden;
-}
-
-ul li
-{
-    background-color: rgb(255, 245, 200);
-    color: darkgreen;
-}
 
 
 

@@ -9,20 +9,22 @@
     </head>
     <body>
           <h1>Hobby List</h1>
+          <div id="buttons">
+               <form action="/" method="get">
+                    <button type="submit">Sign Out</button>
+               </form>
 
-          <form action="/" method="get">
-               <button type="submit">Sign Out</button>
-          </form>
+               <form action="create-hobby" method="get">
+                    <button type="submit" id="add">Add Hobby!</button>
+               </form>
 
-          <form action="create-hobby" method="get">
-               <button type="submit">Add Hobby!</button>
-          </form>
-
-          <form action="profile" method="get">
-               <button type="submit">Profile</button>
-          </form>
+               <form action="profile" method="get">
+                    <button type="submit">Profile</button>
+               </form>
+          </div>
+          
         
-          <div>
+          <div id="list">
                <ul>
                     <hr>
 

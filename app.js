@@ -55,6 +55,8 @@ app.get('/create-account', (req, res) => {
 // CHANGE BACK TO "app.post" once connected from "create-account"
 app.post('/account-created', async (req, res) => {
 
+     console.log(req.body);
+
      const user = {
           username: req.body.username,
           password: req.body.password
@@ -70,7 +72,6 @@ app.post('/account-created', async (req, res) => {
           return;
      }
 
-     // NOT WORKING, NEED TO FIX:
      const conn = await connect();
 
      const insertQuery = await conn.query(`INSERT INTO userProfile (userName, userPassword) VALUES (?, ?);`, [user.username, user.password]);
@@ -81,8 +82,45 @@ app.post('/account-created', async (req, res) => {
 });
 
 // Setting up a route to "list-view" from the home page
-app.get('/list-view', (req, res) => {
-     res.render('list-view', {plans});
+app.post('/list-view', async (req, res) => {
+     
+     const user = {
+          userName: req.body.userName,
+          userPassword: req.body.userPassword
+     }
+
+     // Validation
+
+
+     const conn = await connect();
+
+     //const verifyQuery = await conn.query(`SELECT userName FROM userProfile WHERE userName = ? AND userPassword = ?;`, [user.username, user.password]);
+     const verifyQuery  = await conn.query("Select * FROM userProfile WHERE userName = ? AND userPassword = ?", [user.userName, user.userPassword]);
+     //const verifyQuery = await conn.query(`SELECT IF((SELECT userName FROM userProfile WHERE userName = ? AND userPassword = ?) = ?, "True", "False");`, [user.username, user.password, user.username]);
+
+     //const testArray = Object.values(verifyQuery);
+     //console.log(testArray);
+     // console.log(verifyQuery.length);
+
+     // for (let i = 0; i < verifyQuery.length; i++)
+     // {
+     //      console.log(verifyQuery[i]);
+     // }
+
+     // console.log(verifyQuery[0]);
+
+     console.log(user);
+     console.log(verifyQuery[0]);
+     if (verifyQuery[0] === user)
+     {
+          console.log("True");
+     }
+     else
+     {
+          console.log("False");
+     }
+
+     res.render('list-view', { plans });
 });
 
 // Defining a route to add a new hobby to the list

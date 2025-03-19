@@ -156,7 +156,7 @@ app.post('/hobby-added', async (req, res) => {
 
 // Setting up a route to the profile page
 app.get('/profile', (req, res) => {
-     res.render('profile');
+     res.render('profile', {users});
 });
 
 app.listen(PORT, () => {

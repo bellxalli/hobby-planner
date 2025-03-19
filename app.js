@@ -38,6 +38,7 @@ const PORT = process.env.APP_PORT || 3000;
 
 const users = [];
 const plans = [];
+const setUser  = [];
 
 
 //Define a "default" route for our home page
@@ -100,11 +101,15 @@ app.post('/list-view', async (req, res) => {
 
      if (verifyQuery[0] === undefined)
      {
+          // Is not in the Database
           console.log("False");
+          res.send("This is not a Username and/or Password. Try again, or make a new account."); // Use Validation to handle
      }
      else
      {
-          console.log("True")
+          // Is in the Database
+          console.log("True");
+          setUser.push(user.username);
      }
 
      

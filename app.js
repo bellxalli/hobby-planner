@@ -83,10 +83,10 @@ app.post('/account-created', async (req, res) => {
 
 // Setting up a route to "list-view" from the home page
 app.post('/list-view', async (req, res) => {
-     
+
      const user = {
-          userName: req.body.userName,
-          userPassword: req.body.userPassword
+          username: req.body.username,
+          password: req.body.password
      }
 
      // Validation
@@ -94,32 +94,20 @@ app.post('/list-view', async (req, res) => {
 
      const conn = await connect();
 
-     //const verifyQuery = await conn.query(`SELECT userName FROM userProfile WHERE userName = ? AND userPassword = ?;`, [user.username, user.password]);
-     const verifyQuery  = await conn.query("Select * FROM userProfile WHERE userName = ? AND userPassword = ?", [user.userName, user.userPassword]);
-     //const verifyQuery = await conn.query(`SELECT IF((SELECT userName FROM userProfile WHERE userName = ? AND userPassword = ?) = ?, "True", "False");`, [user.username, user.password, user.username]);
 
-     //const testArray = Object.values(verifyQuery);
-     //console.log(testArray);
-     // console.log(verifyQuery.length);
+     const verifyQuery  = await conn.query("Select userName FROM userProfile WHERE userName = ? AND userPassword = ?", [user.username, user.password]);
+    
 
-     // for (let i = 0; i < verifyQuery.length; i++)
-     // {
-     //      console.log(verifyQuery[i]);
-     // }
-
-     // console.log(verifyQuery[0]);
-
-     console.log(user);
-     console.log(verifyQuery[0]);
-     if (verifyQuery[0] === user)
-     {
-          console.log("True");
-     }
-     else
+     if (verifyQuery[0] === undefined)
      {
           console.log("False");
      }
+     else
+     {
+          console.log("True")
+     }
 
+     
      res.render('list-view', { plans });
 });
 

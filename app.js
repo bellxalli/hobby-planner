@@ -36,7 +36,7 @@ app.use(express.static('public'));
 
 const PORT = process.env.APP_PORT || 3000;
 
-const users = [];
+//const users = [];
 //const plans = [];
 const setUser  = [];
 
@@ -68,17 +68,27 @@ app.post('/account-created', async (req, res) => {
      if (!result.isValid) 
      {
           console.log(result.errors);
-          // res.render('home', { errors: errors }
           res.send(result.errors);
           return;
      }
 
      const conn = await connect();
+     const verifyQuery  = await conn.query("Select userName FROM userProfile WHERE userName = ?", [user.username]);
+    
+     if (verifyQuery[0] !== undefined)
+     {
+          // Is in the Database
+          console.log("In the database");
+          res.send("Username is already in use"); // Use Validation to handle
+     }
+     else
+     {
+          // Is not already in the Database
+          console.log("Not in the database yet");
+          setUser.push(user.username);
+          const insertQuery = await conn.query(`INSERT INTO userProfile (userName, userPassword) VALUES (?, ?);`, [user.username, user.password]);
+     }
 
-     const insertQuery = await conn.query(`INSERT INTO userProfile (userName, userPassword) VALUES (?, ?);`, [user.username, user.password]);
-
-     users.push(user)
-     // Send "account-created" page
      res.render('account-created', { user });
 });
 
@@ -94,7 +104,6 @@ app.post('/logged-in', async  (req, res) => {
      if (!result.isValid) 
      {
           console.log(result.errors);
-          // res.render('home', { errors: errors }
           res.send(result.errors);
           return;
      }
@@ -146,7 +155,6 @@ app.post('/hobby-added', async (req, res) => {
      if (!result.isValid) 
      {
           console.log(result.errors);
-          // res.render('home', { errors: errors }
           res.send(result.errors);
           return;
      }

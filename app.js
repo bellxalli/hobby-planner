@@ -106,7 +106,7 @@ app.post('/logged-in', async  (req, res) => {
      if (!result.isValid) 
      {
           console.log(result.errors);
-          res.send(result.errors);
+          //res.send(result.errors);
           return;
      }
 
@@ -160,7 +160,7 @@ app.post('/hobby-added', async (req, res) => {
      if (!result.isValid) 
      {
           console.log(result.errors);
-          res.send(result.errors);
+          //res.send(result.errors);
           return;
      }
      

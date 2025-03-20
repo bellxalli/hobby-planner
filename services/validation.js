@@ -13,6 +13,8 @@ export default function validateAddHobby(plan)
     {
         errors.push("Must Include a Description");
     }
+    
+    //decided to make these optional
     // if(plan.tagName.trim() === "")
     // {
     //     errors.push("Select a Tag Icon");

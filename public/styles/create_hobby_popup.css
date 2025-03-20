@@ -11,6 +11,7 @@
     
     .err
     {
+        color: darkred;
         display: none;
     }
     
@@ -98,6 +99,7 @@
 
     .err
     {
+        color: darkred;
         display: none;
     }
 
@@ -185,9 +187,9 @@
 
     .err
     {
+        color: darkred;
         display: none;
     }
-
     h1
     {
         display: flex;

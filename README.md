@@ -23,7 +23,7 @@ We are excited to share this organizational tool with you and hope it makes part
 
 Project Documentation:
 
-* HTML, EJS, CSS, Services, Scripts, ReadMe completed by Xalli Bell
-* app.js Completed by Maple Johnson
+* HTML, EJS, CSS, Services, Scripts and ReadMe completed by Xalli Bell
+* app.js, random-activity.ejs and random_styels.css Completed by Maple Johnson
 
 Maple and Xalli did overlap while completing the project. They held two meetings a week outside of class to work together and discuss the project. Individually they both worked on their parts providing additional support to their teammate when needed. Both worked together to achieve the final product.

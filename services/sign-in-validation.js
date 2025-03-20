@@ -1,3 +1,4 @@
+//validation for sign in(home) and create account page 
 export default function validateSignIn(user)
 {
     const errors = [ ]

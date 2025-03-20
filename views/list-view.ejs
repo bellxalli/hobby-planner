@@ -8,25 +8,24 @@
         <link rel="stylesheet" href="styles/list_view_styles.css">
         <link rel="icon" type="image/jpg" href="images/favicon.jpg">
 
-    </head>
+     </head>
     <body>
           <h1>Hobby List</h1>
           <!-- buttons for other pages -->
           <div id="buttons">
                <form action="/" method="get">
-                    <button type="submit">Sign Out</button>
+                    <button type="submit" onclick="logOut()">Sign Out</button>
                </form>
-
+     
                <form action="create-hobby" method="get">
                     <button type="submit" id="add">Add Hobby!</button>
                </form>
-
+     
                <form action="profile" method="get">
                     <button type="submit">Profile</button>
                </form>
           </div>
-          
-        <!-- displaying hobbies -->
+        
           <div id="list">
                <ul>
                     <hr>
@@ -36,14 +35,28 @@
                     <% } %>
 
                     <% for (let i = 0; i < plans.length; i++) { %>
+                         <% let titleColor = plans[i].title; %>
+
+
                          <li><b><%= plans[i].title %></b></li>
                          <li id="tagColor"><b><%= plans[i].tagColor %></b></li>
                          <li><%= plans[i].description %></li>
-                         <button class="done">Remove</button>
+                         <button id="remove">Remove</button>
+                         <button id="complete">Complete!</button>
                          <hr>
                     <% } %>
                </ul>
           </div>
+          <button onclick = "history.back()" id="back">Back</button>
 
      </body>
+
+     <script>
+          function logOut() {
+               console.log(setUser);
+               setUser.pop();
+               console.log(setUser);
+          }
+     </script>
+
 </html>

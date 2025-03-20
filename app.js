@@ -130,7 +130,7 @@ app.post('/logged-in', async  (req, res) => {
 // Setting up a route to "list-view" from the home page
 app.get('/list-view', async (req, res) => {     
      const conn = await connect();
-     const plans = await conn.query('SELECT title, itemDescription FROM hobbyItem WHERE userName = ?', [setUser[0]]);
+     const plans = await conn.query('SELECT title, itemDescription, availDateTimeStart, availDateTimeEnd FROM hobbyItem WHERE userName = ?', [setUser[0]]);
 
      res.render('list-view', { plans });
 });
@@ -144,8 +144,7 @@ app.post('/hobby-added', async (req, res) => {
      const plan = {
           title: req.body.title,
           description: req.body.description,
-          //tagName: req.body.tagName,
-          //tagIcon: req.body.tagIcon,
+          tagName: req.body.tagName,
           availStartDateTime: req.body.dueDate + " " + req.body.startTimer,
           availEndDateTime: req.body.dueDate + " " + req.body.endTimer
      };

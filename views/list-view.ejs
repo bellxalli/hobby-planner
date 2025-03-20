@@ -36,21 +36,21 @@
 
                     <% for (let i = 0; i < plans.length; i++) { %>
                          <li><b><%= plans[i].title %></b></li>
-                         <li><%= plans[i].description %></li>
+                         <li><%= plans[i].itemDescription %></li>
                          <!-- tag display if not empty -->
-                         <% if(plans[i].tagIcon !== "" || plans[i].tagIcon !== "none") { %>
-                              <li>Tag: <%= plans[i].tagIcon%></li>
-                         <% } %>
+                         <!-- <% if(plans[i].tagUsed !== "" || plans[i].tagUsed !== "none") { %>
+                              <li>Tag: <%= plans[i].tagUsed%></li>
+                         <% } %> -->
                          <!-- display time and date if not empty -->
-                         <% if(plans[i].availStartDateTime !== "" || plans[i].availEndDateTime !== "") { %>
-                              <li>Time and Date: <%= plans[i].availStartDateTime%> - <%= plans[i].availEndDateTime%></li>
+                         <% if(plans[i].availDateTimeStart !== "" || plans[i].availDateTimeEnd !== "") { %>
+                              <li><b>When to Start:</b> <%= plans[i].availDateTimeStart%></li>
+                              <li><b>When to End:</b> <%= plans[i].availDateTimeEnd%></li>
                          <% } %>
                          <button id="remove">Remove</button>
                          <hr>
                     <% } %>
                </ul>
           </div>
-          <button onclick = "history.back()" id="back">Back</button>
 
      </body>
 

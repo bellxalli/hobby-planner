@@ -19,10 +19,7 @@ export default function validateAddHobby(plan)
     // {
     //     errors.push("Select a Tag Icon");
     // }
-    // if(plan.tagColor.trim() === "")
-    // {
-    //     errors.push("Pick a Tag Color");
-    // }
+  
     if(plan.availStartDateTime.trim() === "" || plan.availEndDateTime.trim() === "") //fix so it is actual value
     {
         errors.push("Pick a Start Time, End Time, and Date");

@@ -5,6 +5,7 @@ This is a space to thoughtfully organize your hobbies around your daily schedule
 Features in the Hobby Lover's Planner include (but not limited to):
 * Sign in and create account page 
 * List view of all hobbies 
+* Random hobby generator!
 * Add hobby page:
     * Title of hobby
     * Description of hobby
@@ -17,6 +18,7 @@ Features in the Hobby Lover's Planner include (but not limited to):
 Known Limitations:
 * Cannot change password or username
 * Cannot delete account
+* Cannot remove a hobby
 
 We are excited to share this organizational tool with you and hope it makes participating in your favorite pastimes more enjoyable!
 

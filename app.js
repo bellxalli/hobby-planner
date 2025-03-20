@@ -89,6 +89,8 @@ app.post('/account-created', async (req, res) => {
           const insertQuery = await conn.query(`INSERT INTO userProfile (userName, userPassword) VALUES (?, ?);`, [user.username, user.password]);
      }
 
+     conn.release();
+
      res.render('account-created', { user });
 });
 
@@ -124,6 +126,8 @@ app.post('/logged-in', async  (req, res) => {
           setUser.push(user.username);
      }
 
+     conn.release();
+
      res.render('logged-in', { user })
 });
 
@@ -131,6 +135,8 @@ app.post('/logged-in', async  (req, res) => {
 app.get('/list-view', async (req, res) => {     
      const conn = await connect();
      const plans = await conn.query('SELECT title, itemDescription, availDateTimeStart, availDateTimeEnd FROM hobbyItem WHERE userName = ?', [setUser[0]]);
+
+     conn.release();
 
      res.render('list-view', { plans });
 });
@@ -165,6 +171,8 @@ app.post('/hobby-added', async (req, res) => {
 
      const insertHobby = await conn.query(`INSERT INTO hobbyItem (userName, title, itemDescription, availDateTimeStart, availDateTimeEnd) VALUES (?, ?, ?, ?, ?);`, [setUser[0], plan.title, plan.description, plan.availStartDateTime, plan.availEndDateTime]);
 
+     conn.release();
+
      res.render('hobby-added');
 });
 
@@ -177,6 +185,8 @@ app.get('/profile', (req, res) => {
 app.get('/random-activity', async (req, res) => {
      const conn = await connect();
      const randQuery = await conn.query('SELECT title, itemDescription FROM hobbyItem WHERE userName = ?', [setUser[0]]);
+
+     conn.release();
 
      res.render('random-activity', { randQuery });
 });

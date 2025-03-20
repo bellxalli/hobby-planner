@@ -1,5 +1,3 @@
-//put validation in here then call function
-
 export default function validateSignIn(user)
 {
     const errors = [ ]

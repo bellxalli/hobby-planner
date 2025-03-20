@@ -4,19 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Create Hobby Form</title>
+        <!-- stylesheet -->
         <link rel="stylesheet" href="styles/create_hobby_popup.css">
+        <!-- favicon -->
         <link rel="stylesheet" href="styles/account_styles.css">
+        <!-- script -->
+        <script src="scripts/client_create_hobby_validation.js" defer></script>
 
     </head>
     <body>
-
+        <!-- form to add a new hobby to the list -->
         <h1>Add New Hobby</h1>
 
-        <form action="hobby-added" method="post" class="form-container">
+        <form action="hobby-added" method="post" class="form-container" id="create-hobby">
             <fieldset class="form-fieldset">
                 <legend>Title</legend>
                 <label>
-                    <input type="text" name="title" class="form-input">
+                    <input type="text" name="title" class="form-input" id="title">
                     <span id="err-title" class="err">Enter title</span>
                 </label>
             </fieldset>
@@ -24,7 +28,7 @@
             <fieldset class="form-fieldset">
                 <legend>Description</legend>
                 <label>
-                    <textarea name="description" class="form-input"></textarea>
+                    <textarea name="description" class="form-input" id="description"></textarea>
                     <span id="err-description" class="err">Enter description</span>
                 </label>
             </fieldset>
@@ -89,12 +93,7 @@
             </fieldset> -->
 
             <button class="btn-submit" type="submit">Submit Hobby</button>    
-        </form>
-
-        <!-- <button type="submit" id="cancel" onclick="history.go(-1)">Cancel</button> -->
-        <a href="http://localhost:3000/list-view?"> Cancel </a>
-        <!-- <input type="button" value="Cancel" onclick="window.location='http://localhost:3000/list-view?'"/> -->
-        
+        </form>        
     </body>
 </html>
 

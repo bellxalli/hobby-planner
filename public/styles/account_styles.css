@@ -79,6 +79,12 @@
     {
         margin: 0 0 10px 0;
     }
+
+    .err
+    {
+        color: darkred;
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 950px) 
@@ -161,6 +167,12 @@
     {
         margin: 0 0 10px 0;
     }
+
+    .err
+    {
+        color: darkred;
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 950px) 
@@ -242,6 +254,12 @@
     input
     {
         margin: 0 0 10px 0;
+    }
+
+    .err
+    {
+        color: darkred;
+        display: none;
     }
 }
 

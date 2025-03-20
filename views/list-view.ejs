@@ -25,7 +25,7 @@
                     <button type="submit">Profile</button>
                </form>
           </div>
-        
+        <!-- display hobbies -->
           <div id="list">
                <ul>
                     <hr>
@@ -35,14 +35,17 @@
                     <% } %>
 
                     <% for (let i = 0; i < plans.length; i++) { %>
-                         <% let titleColor = plans[i].title; %>
-
-
                          <li><b><%= plans[i].title %></b></li>
-                         <li id="tagColor"><b><%= plans[i].tagColor %></b></li>
                          <li><%= plans[i].description %></li>
+                         <!-- tag display if not empty -->
+                         <% if(plans[i].tagIcon !== "" || plans[i].tagIcon !== "none") { %>
+                              <li>Tag: <%= plans[i].tagIcon%></li>
+                         <% } %>
+                         <!-- display time and date if not empty -->
+                         <% if(plans[i].availStartDateTime !== "" || plans[i].availEndDateTime !== "") { %>
+                              <li>Time and Date: <%= plans[i].availStartDateTime%> - <%= plans[i].availEndDateTime%></li>
+                         <% } %>
                          <button id="remove">Remove</button>
-                         <button id="complete">Complete!</button>
                          <hr>
                     <% } %>
                </ul>

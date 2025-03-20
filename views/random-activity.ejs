@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h3>Have you considered trying</h3>
+        <% let randNum = rollDie(randQuery.length); %>
+        <h1><%= randQuery[randNum].title %></h1>
+        <h3><%= randQuery[randNum].itemDescription %></h3>
+
+        <button onclick="history.back()" class="btn-submit">Back</button>
+    </body>
+
+    <% function rollDie(numFaces) { %>
+        <% return Math.floor(Math.random() * numFaces); %>
+    <% } %>
+
+</html>

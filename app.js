@@ -173,6 +173,14 @@ app.get('/profile', (req, res) => {
      res.render('profile', {setUser});
 });
 
+// Setting up a route to the random generator
+app.get('/random-activity', async (req, res) => {
+     const conn = await connect();
+     const randQuery = await conn.query('SELECT title, itemDescription FROM hobbyItem WHERE userName = ?', [setUser[0]]);
+
+     res.render('random-activity', { randQuery });
+});
+
 app.listen(PORT, () => {
      console.log(`Server is running at http://localhost:${PORT}`);
  });

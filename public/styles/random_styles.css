@@ -1,0 +1,212 @@
+@media only screen and (max-width: 420px) 
+{
+    body
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        background-color: rgb(255, 250, 230);
+    }
+
+    h1
+    {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        margin-top: 100px;
+        margin-bottom: auto;
+        color: darkgreen;
+    }
+
+    h2
+    {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: auto;
+        color: darkgreen;
+    }
+
+    h3
+    {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        margin-top: 100px;
+        margin-bottom: auto;
+    }
+
+    div
+    {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        width: 40%;
+    }
+
+    button
+    {
+        display: flex;
+        margin-top: 10px;
+        background-color: darkslateblue;
+        color: rgb(255, 250, 230);
+        border-style:solid;
+        border-color: darkslateblue;
+        border-radius: 3px;
+    }
+    button:hover
+    {
+        background-color: lavender;
+        color: darkslateblue;
+    }
+
+}
+
+@media only screen and (max-width: 950px) 
+{
+    body
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        background-color: rgb(255, 250, 230);
+    }
+
+    h1
+    {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        margin-top: 100px;
+        margin-bottom: auto;
+        color: darkgreen;
+    }
+
+    h2
+    {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        margin-top: 100px;
+        margin-bottom: auto;
+        color: darkgreen;
+    }
+
+    h3
+    {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: auto;
+    }
+
+    div
+    {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        width: 40%;
+    }
+
+    button
+    {
+        display: flex;
+        margin-top: 10px;
+        background-color: darkslateblue;
+        color: rgb(255, 250, 230);
+        border-style:solid;
+        border-color: darkslateblue;
+        border-radius: 3px;
+    }
+    button:hover
+    {
+        background-color: lavender;
+        color: darkslateblue;
+    }
+
+}
+
+@media only screen and (min-width: 950px) 
+{
+    body
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        background-color: rgb(255, 250, 230);
+    }
+
+    h1
+    {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        margin-top: 100px;
+        margin-bottom: auto;
+        color: darkgreen;
+    }
+
+    h2
+    {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        margin-top: 100px;
+        margin-bottom: auto;
+        color: darkgreen;
+    }
+
+    h3
+    {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: auto;
+    }
+
+    div
+    {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        width: 40%;
+    }
+
+    button
+    {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        background-color: darkslateblue;
+        color: rgb(255, 250, 230);
+        border-style:solid;
+        border-color: darkslateblue;
+        border-radius: 3px;
+    }
+    button:hover
+    {
+        background-color: lavender;
+        color: darkslateblue;
+    }
+
+}
+
+

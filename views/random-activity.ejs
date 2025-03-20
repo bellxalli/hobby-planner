@@ -3,13 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Hobby Generation</title>
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="styles/random_styles.css">
     </head>
     <body>
         <h3>Have you considered trying</h3>
         <% let randNum = rollDie(randQuery.length); %>
         <h1><%= randQuery[randNum].title %></h1>
-        <h3><%= randQuery[randNum].itemDescription %></h3>
+        <h2><%= randQuery[randNum].itemDescription %></h2>
 
         <button onclick="history.back()" class="btn-submit">Back</button>
     </body>

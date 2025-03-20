@@ -145,7 +145,7 @@ app.post('/hobby-added', async (req, res) => {
           title: req.body.title,
           description: req.body.description,
           //tagName: req.body.tagName,
-          tagIcon: req.body.tagIcon,
+          //tagIcon: req.body.tagIcon,
           availStartDateTime: req.body.dueDate + " " + req.body.startTimer,
           availEndDateTime: req.body.dueDate + " " + req.body.endTimer
      };
@@ -164,7 +164,7 @@ app.post('/hobby-added', async (req, res) => {
      console.log(setUser[0]);
      console.log(plan);
 
-     const insertHobby = await conn.query(`INSERT INTO hobbyItem (userName, title, itemDescription, tagIcon, availDateTimeStart, availDateTimeEnd) VALUES (?, ?, ?, ?, ?, ?);` [setUser[0], plan.title, plan.description, plan.tagIcon, plan.availStartDateTime, plan.availEndDateTime]);
+     const insertHobby = await conn.query(`INSERT INTO hobbyItem (userName, title, itemDescription, availDateTimeStart, availDateTimeEnd) VALUES (?, ?, ?, ?, ?);`, [setUser[0], plan.title, plan.description, plan.availStartDateTime, plan.availEndDateTime]);
 
      res.render('hobby-added');
 });

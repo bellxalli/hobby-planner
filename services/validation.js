@@ -23,10 +23,10 @@ export default function validateAddHobby(plan)
     // {
     //     errors.push("Pick a Tag Color");
     // }
-    // if(plan.availStartDateTime === "" || plan.availEndDateTime === "") //fix so it is actual value
-    // {
-    //     errors.push("Pick a Start Time, End Time, and Date");
-    // }
+    if(plan.availStartDateTime.trim() === "" || plan.availEndDateTime.trim() === "") //fix so it is actual value
+    {
+        errors.push("Pick a Start Time, End Time, and Date");
+    }
     return {
         isValid: errors.length === 0,
         errors

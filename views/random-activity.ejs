@@ -8,10 +8,15 @@
         <link rel="stylesheet" href="styles/random_styles.css">
     </head>
     <body>
-        <h3>Have you considered trying</h3>
-        <% let randNum = rollDie(randQuery.length); %>
-        <h1><%= randQuery[randNum].title %></h1>
-        <h2><%= randQuery[randNum].itemDescription %></h2>
+        
+        <% if (randQuery.length === 0) { %>
+            <h1>Please add a hobby before trying to generate an option.</h1>
+        <% } else {%>
+            <h3>Have you considered trying</h3>
+            <% let randNum = rollDie(randQuery.length); %>
+            <h1><%= randQuery[randNum].title %></h1>
+            <h2><%= randQuery[randNum].itemDescription %></h2>
+        <% } %>
 
         <button onclick="history.back()" class="btn-submit">Back</button>
     </body>

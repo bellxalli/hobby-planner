@@ -125,31 +125,33 @@ app.post('/hobby-added', async (req, res) => {
      const plan = {
           title: req.body.title,
           description: req.body.description,
-          tagName: req.body.tagName,
+          //tagName: req.body.tagName,
           tagColor: req.body.tagColor,
           availStartDateTime: req.body.dueDate + " " + req.body.startTimer,
           availEndDateTime: req.body.dueDate + " " + req.body.endTimer
      };
 
      //validation
-     const result = validateAddHobby(plan);
-     if (!result.isValid) 
-     {
-          console.log(result.errors);
-          // res.render('home', { errors: errors }
-          res.send(result.errors);
-          return;
-     }
+     // const result = validateAddHobby(plan);
+     // if (!result.isValid) 
+     // {
+     //      console.log(result.errors);
+     //      // res.render('home', { errors: errors }
+     //      res.send(result.errors);
+     //      return;
+     // }
      
      const conn = await connect();
 
-     const insertHobby = await conn.query(`INSERT INTO hobbyItem (userName, title, itemDescription, tagName, tagColor, availDateTimeStart, availDateTimeEnd) 
-          VALUES (?, ?, ?, ?, ?, ?, ?);` [setUser[0], plan.title, plan.description, plan.tagName, plan.tagColor, plan.availStartDateTime, plan.availEndDateTime]);
-
+     console.log(setUser[0]);
      console.log(plan);
+
+     const insertHobby = await conn.query(`INSERT INTO hobbyItem (userName, title, itemDescription, tagColor, availDateTimeStart, availDateTimeEnd) VALUES (?, ?, ?, ?, ?, ?);` ["asdf", plan.title, plan.description, plan.tagColor, plan.availStartDateTime, plan.availEndDateTime]);
+
+     
      plans.push(plan);
 
-     res.render('hobby-added', {plans});
+     res.render('hobby-added', {plans, setUser});
 });
 
 // Setting up a route to the profile page

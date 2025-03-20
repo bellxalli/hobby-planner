@@ -8,19 +8,25 @@
         <link rel="stylesheet" href="styles/account_styles.css">
         <!-- favicon -->
         <link rel="stylesheet" href="styles/account_styles.css">
+        <!-- script -->
+        <script src="scripts/client-create-account-validation.js" defer></script>
 
     </head>
     <body>
         <h1>Welcome!</h1>
         <!-- creating a new account  -->
         <div>
-            <form action="account-created" method="post">
+            <form action="account-created" method="post" id="create-account">
             <legend>Create New Account!</legend>
             <label>Username: </label>
-            <input type="text" name="username">
+            <input type="text" name="username" id="username">
+            <span class="err" id="err-user">Username required</span>
+
 
             <label>Password: </label>
-            <input type="text" name="password">
+            <input type="text" name="password" id="password">
+            <span class="err" id="err-pass">Password required</span>
+
             <button type="submit">Create Account and Sign In</button>
             </form>
         </div>

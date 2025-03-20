@@ -8,18 +8,25 @@
         <link rel="stylesheet" href="styles/account_styles.css">
         <!-- favicon -->
         <link rel="icon" type="image/jpg" href="images/favicon.jpg">
+        <!-- script -->
+        <script src="scripts/client-sign-in-validation.js" defer></script>
+
     </head>
     <body>
         <!-- sign in form -->
         <h1>The Hobby Lover's Planner</h1>
         <div>
-            <form action="list-view" method="post">
+            <form action="list-view" method="post" id="sign-in">
                 <legend>Sign In!</legend>
                 <label>Username: </label>
-                <input type="text" name="username">
+                <input type="text" name="username" id="username">
+                <span class="err" id="err-user">Username required</span>
+
 
                 <label>Password: </label>
-                <input type="text" name="password">
+                <input type="text" name="password" id="password">
+                <span class="err" id="err-pass">Password required</span>
+
                 <button type="submit" id="sign-in">Sign In</button>
             </form>
 

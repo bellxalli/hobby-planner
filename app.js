@@ -113,7 +113,7 @@ app.post('/list-view', async (req, res) => {
      }
 
      
-     res.render('list-view', { plans });
+     res.render('list-view', { plans, setUser });
 });
 
 // Defining a route to add a new hobby to the list
@@ -139,7 +139,12 @@ app.post('/hobby-added', async (req, res) => {
           // res.render('home', { errors: errors }
           res.send(result.errors);
           return;
-     }     
+     }
+     
+     const conn = await connect();
+
+     const insertHobby = await conn.query(`INSERT INTO hobbyItem (userName, title, itemDescription, tagName, tagColor, availDateTimeStart, availDateTimeEnd) 
+          VALUES (?, ?, ?, ?, ?, ?, ?);` [setUser[0], plan.title, plan.description, plan.tagName, plan.tagColor, plan.availStartDateTime, plan.availEndDateTime]);
 
      console.log(plan);
      plans.push(plan);

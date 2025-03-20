@@ -37,7 +37,7 @@ app.use(express.static('public'));
 const PORT = process.env.APP_PORT || 3000;
 
 const users = [];
-const plans = [];
+//const plans = [];
 const setUser  = [];
 
 
@@ -51,9 +51,9 @@ app.get('/', (req, res) => {
 // Define a route for creating an account
 app.get('/create-account', (req, res) => {
      res.render('create-account');
-})
+});
 
-// CHANGE BACK TO "app.post" once connected from "create-account"
+// Define confirmation for account creation
 app.post('/account-created', async (req, res) => {
 
      console.log(req.body);
@@ -82,23 +82,26 @@ app.post('/account-created', async (req, res) => {
      res.render('account-created', { user });
 });
 
-// Setting up a route to "list-view" from the home page
-app.post('/list-view', async (req, res) => {
-
+// Define confirmation for sign in
+app.post('/logged-in', async  (req, res) => {
      const user = {
           username: req.body.username,
           password: req.body.password
      }
 
      // Validation
-
+     const result = validateSignIn(user);
+     if (!result.isValid) 
+     {
+          console.log(result.errors);
+          // res.render('home', { errors: errors }
+          res.send(result.errors);
+          return;
+     }
 
      const conn = await connect();
-
-
      const verifyQuery  = await conn.query("Select userName FROM userProfile WHERE userName = ? AND userPassword = ?", [user.username, user.password]);
     
-
      if (verifyQuery[0] === undefined)
      {
           // Is not in the Database
@@ -112,8 +115,15 @@ app.post('/list-view', async (req, res) => {
           setUser.push(user.username);
      }
 
-     
-     res.render('list-view', { plans, setUser });
+     res.render('logged-in', { user })
+});
+
+// Setting up a route to "list-view" from the home page
+app.get('/list-view', async (req, res) => {     
+     const conn = await connect();
+     const plans = await conn.query('SELECT title, itemDescription FROM hobbyItem WHERE userName = ?', [setUser[0]]);
+
+     res.render('list-view', { plans });
 });
 
 // Defining a route to add a new hobby to the list
@@ -132,26 +142,23 @@ app.post('/hobby-added', async (req, res) => {
      };
 
      //validation
-     // const result = validateAddHobby(plan);
-     // if (!result.isValid) 
-     // {
-     //      console.log(result.errors);
-     //      // res.render('home', { errors: errors }
-     //      res.send(result.errors);
-     //      return;
-     // }
+     const result = validateAddHobby(plan);
+     if (!result.isValid) 
+     {
+          console.log(result.errors);
+          // res.render('home', { errors: errors }
+          res.send(result.errors);
+          return;
+     }
      
      const conn = await connect();
 
      console.log(setUser[0]);
      console.log(plan);
 
-     const insertHobby = await conn.query(`INSERT INTO hobbyItem (userName, title, itemDescription, tagColor, availDateTimeStart, availDateTimeEnd) VALUES (?, ?, ?, ?, ?, ?);` ["asdf", plan.title, plan.description, plan.tagColor, plan.availStartDateTime, plan.availEndDateTime]);
+     const insertHobby = await conn.query(`INSERT INTO hobbyItem (userName, title, itemDescription, tagColor, availDateTimeStart, availDateTimeEnd) VALUES (?, ?, ?, ?, ?, ?);`, [setUser[0], plan.title, plan.description, plan.tagColor, plan.availStartDateTime, plan.availEndDateTime]);
 
-     
-     plans.push(plan);
-
-     res.render('hobby-added', {plans, setUser});
+     res.render('hobby-added');
 });
 
 // Setting up a route to the profile page

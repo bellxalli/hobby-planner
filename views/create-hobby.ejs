@@ -34,11 +34,10 @@
             </fieldset>
 
             <fieldset class="form-fieldset">
-                <legend>Tags</legend>               
-
                 <legend>Tag Icon:</legend>
                 <label>
                     <select name="tagName" class="form-input">
+                        <option>none</option>
                         <option>🧶</option>
                         <option>🎭</option>
                         <option>🎨</option>
@@ -57,12 +56,6 @@
                         <option>✈️</option>
                     </select>
                     <span id="err-tagIcon" class="err">Select An Icon</span>
-                </label>
-
-                <legend>Tag Color:</legend>
-                <label>
-                    <input type="color" name="tagColor" class="form-input" value="#000000">
-                    <span id="err-color" class="err">Pick a Color</span>
                 </label>
             </fieldset>
 
@@ -87,10 +80,6 @@
                     <span id="err-date" class="err">Select a Date</span>
                 </label>
             </fieldset>
-
-            <!-- <fieldset class="form-fieldset">
-                <button>Random Selection</button>
-            </fieldset> -->
 
             <button class="btn-submit" type="submit">Submit Hobby</button>    
         </form>        
